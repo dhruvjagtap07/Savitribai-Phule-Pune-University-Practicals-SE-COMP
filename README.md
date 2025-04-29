@@ -1,9 +1,10 @@
 # Savitribai Phule Pune University Practicals
 
-This repository contains academic practicals for the following subjects:
+This repository contains SPPU academic practicals of Second year Sem 3 & 4 for the following subjects:
 - **OOP**: Object-Oriented Programming
 - **CG**: Computer Graphics
 - **DSL**: Data Structures and Logic
+- **DSA**: Data Structures and Algorithm
 
 Each folder contains practicals with problem statements and solutions.
 
