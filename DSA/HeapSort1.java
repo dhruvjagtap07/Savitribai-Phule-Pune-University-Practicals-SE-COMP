@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HeapSort {
+public class HeapSort1 {
     private int[] heap;
     private int count;
 
@@ -79,7 +79,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        HeapSort myObject = new HeapSort();
+        HeapSort1 myObject = new HeapSort1();
         myObject.create();
         myObject.sort();
         myObject.print();

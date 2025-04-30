@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class HeapSort {
+public class HeapSort2 {
 
     // Function to heapify a subtree rooted at index i
     public void heapify(int[] arr, int n, int i) {
-        int largest = i;          // Initialize largest as root
-        int left = 2 * i + 1;     // Left child index
-        int right = 2 * i + 2;    // Right child index
+        int largest = i; // Initialize largest as root
+        int left = 2 * i + 1; // Left child index
+        int right = 2 * i + 2; // Right child index
 
         // If left child is larger than root
         if (left < n && arr[left] > arr[largest])
@@ -55,7 +55,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        HeapSort hs = new HeapSort();
+        HeapSort2 hs = new HeapSort2();
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of elements: ");
@@ -69,5 +69,7 @@ public class HeapSort {
         hs.sort(arr);
         System.out.println("Sorted array:");
         hs.printArray(arr);
+
+        sc.close();
     }
 }
