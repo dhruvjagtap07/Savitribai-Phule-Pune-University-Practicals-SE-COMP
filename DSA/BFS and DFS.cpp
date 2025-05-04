@@ -7,6 +7,7 @@
 #include <stack>
 
 using namespace std;
+
 int i, j, k, m, n;
 int cost[10][10];
 
@@ -74,25 +75,23 @@ void dfs(int start)
     stack<int> st;
 
     st.push(start);
+    visited[start] = true;
 
     cout << "DFS Traversal: ";
 
     while (!st.empty())
     {
-        int s = st.top();
+        int node = st.top();
         st.pop();
 
-        if (!visited[s])
-        {
-            cout << s << " ";
-            visited[s] = true;
-        }
+        cout << node << " ";
 
         for (int d = 0; d < m; d++)
         {
-            if (cost[s][d] == 1 && !visited[d])
+            if (cost[node][d] == 1 && !visited[d])
             {
                 st.push(d);
+                visited[d] = true;
             }
         }
     }

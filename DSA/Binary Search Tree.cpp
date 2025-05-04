@@ -5,6 +5,7 @@
 // iii. Minimum data value found in the tree,
 // iv. Change a tree so that the roles of the left and right pointers are swapped at every node,
 // v. Search a value
+
 #include <iostream>
 
 using namespace std;
@@ -15,9 +16,9 @@ struct Node
     Node *left;
     Node *right;
 
-    Node(int data = 0)
+    Node(int value = 0)
     {
-        this->data = data;
+        data = value;
         left = nullptr;
         right = nullptr;
     }
@@ -181,6 +182,75 @@ public:
         inorder(root);
         cout << endl;
     }
+
+    void preorder(Node *node)
+    {
+        if (!node)
+            return;
+
+        cout << node->data << " ";
+        preorder(node->left);
+        preorder(node->right);
+    }
+
+    void preorder()
+    {
+        if (!root)
+        {
+            cout << "Tree is empty." << endl;
+            return;
+        }
+        preorder(root);
+        cout << endl;
+    }
+
+    void postorder(Node *node)
+    {
+        if (!node)
+            return;
+
+        postorder(node->left);
+        postorder(node->right);
+        cout << node->data << " ";
+    }
+
+    void postorder()
+    {
+        if (!root)
+        {
+            cout << "Tree is empty." << endl;
+            return;
+        }
+        preorder(root);
+        cout << endl;
+    }
+
+    void display()
+    {
+        int choice;
+        cout << "===< Display MENU >===" << endl;
+        cout << "1) Preorder Display" << endl;
+        cout << "2) Inorder Display" << endl;
+        cout << "3) Postorder Display" << endl;
+
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            preorder();
+            break;
+        case 2:
+            inorder();
+            break;
+        case 3:
+            postorder();
+            break;
+        default:
+            cout << "Please enter correct choice!" << endl;
+        }
+    }
 };
 
 int main()
@@ -263,8 +333,7 @@ int main()
         }
         case 7:
         {
-            cout << "Inorder traversal of the tree: ";
-            tree.inorder();
+            tree.display();
             break;
         }
         case 8:
